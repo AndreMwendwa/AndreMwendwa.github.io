@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name</title>
+  <title>Mwendwa Kiko</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -28,11 +28,11 @@
     .wrapper {
       display: flex;
       min-height: 100vh;
-      max-width: 960px;
+      max-width: 1040px;
       margin: 0 auto;
     }
     .sidebar {
-      width: 240px;
+      width: 270px;
       flex-shrink: 0;
       padding: 48px 28px 48px 32px;
       border-right: 1px solid #e5e5e5;
@@ -53,9 +53,15 @@
       justify-content: center;
       font-size: 60px;
     }
-    .sidebar h1 { font-size: 1.2rem; font-weight: bold; margin-bottom: 4px; }
-    .sidebar .role { font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 20px; }
-    .sidebar-links { list-style: none; font-size: 0.85rem; text-align: left; }
+    .sidebar h1 { font-size: 1.4rem; font-weight: bold; margin-bottom: 4px; }
+    .sidebar .role { font-size: 0.92rem; color: #666; line-height: 1.55; margin-bottom: 20px; }
+    .sidebar-note {
+      font-size: 0.84rem;
+      color: #666;
+      margin: 18px 0 24px;
+      text-align: left;
+    }
+    .sidebar-links { list-style: none; font-size: 0.88rem; text-align: left; }
     .sidebar-links li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
     .sidebar-links li::before { content: "→"; color: #aaa; }
     .main { flex: 1; padding: 0 40px 80px; }
@@ -69,6 +75,7 @@
       background: #fff;
       z-index: 10;
       border-bottom: 1px solid #f0f0f0;
+      flex-wrap: wrap;
     }
     .tabs a {
       padding: 6px 18px;
@@ -86,15 +93,42 @@
       scroll-margin-top: 60px;
     }
     .section p { margin-bottom: 12px; }
-    .news-list { list-style: none; }
-    .news-list li { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
-    .news-date { color: #888; white-space: nowrap; width: 90px; flex-shrink: 0; }
-    .project-list { list-style: none; }
-    .project-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
-    .project-list li strong { display: block; margin-bottom: 2px; font-size: 1rem; }
-    @media (max-width: 640px) {
+    .news-list, .project-list { list-style: none; }
+    .news-list li, .project-list li {
+      display: flex;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
+    }
+    .news-date {
+      color: #888;
+      white-space: nowrap;
+      width: 100px;
+      flex-shrink: 0;
+    }
+    .project-list li {
+      display: block;
+    }
+    .project-list li strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 1rem;
+    }
+    .subtle {
+      color: #666;
+      font-size: 0.92rem;
+    }
+    @media (max-width: 760px) {
       .wrapper { flex-direction: column; }
-      .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e5e5e5; padding: 32px 24px; height: auto; position: static; }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 32px 24px;
+        height: auto;
+        position: static;
+      }
       .main { padding: 32px 24px; }
     }
   </style>
@@ -104,17 +138,22 @@
 <div class="wrapper">
 
   <aside class="sidebar">
-    <div class="avatar">🧑‍💻</div>
-    <h1>Your Full Name</h1>
+    <div class="avatar">MK</div>
+    <h1>Mwendwa Kiko</h1>
     <p class="role">
-      MSc Student<br/>
-      Department of Something<br/>
+      PhD Candidate in Civil Engineering (Transportation Systems)<br/>
       University of Toronto
     </p>
+    <p class="sidebar-note">
+      Researching travel behaviour, automobile ownership, transport decarbonization,
+      and integrated transportation and land use modelling.
+    </p>
     <ul class="sidebar-links">
-      <li><a href="mailto:you@mail.com">Email</a></li>
-      <li><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
-      <li><a href="https://github.com/yourusername">GitHub</a></li>
+      <li><a href="mailto:mwendwa.kiko@mail.utoronto.ca">mwendwa.kiko@mail.utoronto.ca</a></li>
+      <li><a href="https://www.linkedin.com/in/mwendwa-kiko" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="#publications">Selected publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#">GitHub</a></li>
     </ul>
   </aside>
 
@@ -123,50 +162,97 @@
     <nav class="tabs">
       <a href="#about">About</a>
       <a href="#news">News</a>
-      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
       <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
     </nav>
 
     <div class="section" id="about">
       <h2>About</h2>
-      <p>Write a short introduction here — who you are, what you study or work on,
-      and what you're passionate about. Two or three sentences is plenty.</p>
-      <p>You can add a second paragraph for more detail — your research interests,
-      industry experience, or what you're looking for next.</p>
+      <p>
+        I am a PhD candidate in Civil Engineering (Transportation Systems) at the University of Toronto,
+        supervised by Prof. Eric J. Miller. My doctoral research focuses on modelling household automobile
+        transactions for integrated transportation and land use models.
+      </p>
+      <p>
+        My broader interests include travel demand modelling, electric vehicle adoption, transport decarbonization,
+        ICT and transport, and public transport in the Global South. Before starting my PhD, I completed a master's
+        in Transport and Sustainable Development at École Nationale des Ponts et Chaussées in France and worked in
+        both transport research and civil engineering practice.
+      </p>
     </div>
 
     <div class="section" id="news">
       <h2>News</h2>
       <ul class="news-list">
         <li>
-          <span class="news-date">Mar 2026</span>
-          <span>Started my new role at Acme Corp as a research intern.</span>
+          <span class="news-date">Jul 2026</span>
+          <span>Presenting <em>From Coast to Coast: Understanding and Predicting BEV Adoption across Canadian Regions</em> at the World Conference on Transport Research in Toulouse.</span>
         </li>
         <li>
-          <span class="news-date">Jan 2026</span>
-          <span>Paper accepted at the Annual Conference on Something.</span>
+          <span class="news-date">Jun 2026</span>
+          <span>Presenting research on online vehicle search distances in Canada at the 6th World Symposium on Transport and Land Use Research in Beijing.</span>
         </li>
         <li>
-          <span class="news-date">Sep 2025</span>
-          <span>Started my MSc program at the University of Toronto.</span>
+          <span class="news-date">Mar 2025</span>
+          <span>Won 1st Place in the 2024–2025 IMI Big Data &amp; Artificial Intelligence Competition.</span>
+        </li>
+        <li>
+          <span class="news-date">Jun 2024</span>
+          <span>Awarded the NSERC Canada Graduate Scholarships — Doctoral, along with the Arcadis | IBI Group Scholarship and Alan Tonks Scholarship.</span>
         </li>
       </ul>
     </div>
 
-    <div class="section" id="projects">
-      <h2>Projects</h2>
+    <div class="section" id="research">
+      <h2>Research &amp; Experience</h2>
       <ul class="project-list">
         <li>
-          <strong><a href="#">Project One Title</a></strong>
-          A one-sentence description of what this project does or why it matters.
+          <strong>Doctoral Student, University of Toronto <span class="subtle">(Sep 2022 – present)</span></strong>
+          Conducting research on automobile ownership and transaction modelling, including literature reviews and model development for integrated transportation and land use applications.
         </li>
         <li>
-          <strong><a href="#">Project Two Title</a></strong>
-          A one-sentence description of what this project does or why it matters.
+          <strong>Research Engineer, Laboratoire Ville Mobilité Transport <span class="subtle">(Dec 2021 – Sep 2022)</span></strong>
+          Worked on travel demand modelling and economic evaluation of an experimental autonomous vehicle service in the Saclay region of France.
         </li>
         <li>
-          <strong><a href="#">Project Three Title</a></strong>
-          A one-sentence description of what this project does or why it matters.
+          <strong>Research Intern, Laboratoire Ville Mobilité Transport <span class="subtle">(Jun 2021 – Dec 2021)</span></strong>
+          Helped translate the MODUS 3.1 transport model from SAS to Python and extended methods for studying teleworking impacts on mobility in the Greater Paris region.
+        </li>
+        <li>
+          <strong>Engineering for Change Fellow, Bridges to Prosperity / Autodesk Foundation <span class="subtle">(May 2023 – Oct 2023)</span></strong>
+          Analyzed river crossing structures for rural transportation contexts and developed a planning matrix tool for infrastructure planners in developing countries.
+        </li>
+        <li>
+          <strong>Graduate Engineer, Span Consulting Engineers LLP <span class="subtle">(Sep 2018 – Aug 2020)</span></strong>
+          Worked in civil and structural engineering design, project management, and contract administration.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section" id="publications">
+      <h2>Selected Publications</h2>
+      <ul class="project-list">
+        <li>
+          <strong>Kiko, M., Miller, E. J. (2025)</strong>
+          Factors Influencing Car Ownership in Toronto: Insights from a Hurdle-Ordered Model. <em>International Journal of Sustainable Transportation</em>.
+        </li>
+        <li>
+          <strong>Kiko, M., Miller, E. J. (2025)</strong>
+          Mobility Tools in Pre- and Post-COVID Toronto: Ownership Patterns and Model Transferability. <em>Travel Behaviour and Society</em> (under review).
+        </li>
+        <li>
+          <strong>Kiko, M., Zhang, J., Zhang, Y., Miller, E. J. (2025)</strong>
+          From Coast to Coast: Understanding Electric Vehicle Adoption Across Canadian Regions. <em>Transportation Research Part D</em> (under review).
+        </li>
+        <li>
+          <strong>Kiko, M., Coulombel, N., Poulhès, A., Seregina, T., Tremblin, G. (2023)</strong>
+          Evaluation of Direct and Indirect Effects of Teleworking on Mobility: The Case of Paris. <em>Transportation Research Record</em>.
+        </li>
+        <li>
+          <strong>Hasselwander, M., Kiko, M., &amp; Johnson, T. (2022)</strong>
+          Digital civic engagement, open data, and the informal sector: A think piece. <em>Transportation Research Interdisciplinary Perspectives</em>.
         </li>
       </ul>
     </div>
@@ -175,13 +261,32 @@
       <h2>Education</h2>
       <ul class="project-list">
         <li>
-          <strong>MSc, Your Field — University of Toronto</strong>
-          2023 – present
+          <strong>PhD, Civil Engineering (Transportation Systems) — University of Toronto</strong>
+          Sep 2022 – present<br/>
+          Thesis: <em>Modelling household automobile transactions for an Integrated Transportation and Land Use model</em>.
         </li>
         <li>
-          <strong>BSc, Your Field — Your Undergrad University</strong>
-          2019 – 2023
+          <strong>Master's in Transport and Sustainable Development — École Nationale des Ponts et Chaussées</strong>
+          Sep 2020 – Dec 2021<br/>
+          Graduated <em>mention très bien</em> (summa cum laude).
         </li>
+        <li>
+          <strong>BSc, Civil Engineering — University of Nairobi</strong>
+          May 2013 – Sep 2018<br/>
+          First Class Honours.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section" id="awards">
+      <h2>Honours &amp; Awards</h2>
+      <ul class="project-list">
+        <li><strong>NSERC Canada Graduate Scholarships — Doctoral</strong> — 2024</li>
+        <li><strong>1st Place, IMI Big Data &amp; Artificial Intelligence Competition</strong> — 2025</li>
+        <li><strong>Arcadis | IBI Group Scholarship (TAC)</strong> — 2024</li>
+        <li><strong>Alan Tonks Scholarship in Transportation Engineering</strong> — 2024</li>
+        <li><strong>1st Place, University of Toronto Mobility Five Minute Thesis Competition</strong> — 2024</li>
+        <li><strong>Edith M. McCuaig-Throop Award</strong> — 2023</li>
       </ul>
     </div>
 
